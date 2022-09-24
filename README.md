@@ -22,7 +22,7 @@
 	
 	공연예술통합전산망 오픈 API
 	
-	![image](https://user-images.githubusercontent.com/93438663/192114461-f16bc15d-7957-4977-bda0-0624ca1dd1b4.png)
+	![initial](https://user-images.githubusercontent.com/93438663/192114461-f16bc15d-7957-4977-bda0-0624ca1dd1b4.png)
 		- API key를 받아 공연예술 데이터를 파싱하여 DB 데이터 구축
 	
 	HTML & CSS
