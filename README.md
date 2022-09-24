@@ -13,11 +13,11 @@
 
 ![image](https://user-images.githubusercontent.com/93438663/192116528-f05831dd-20da-4e7e-a8cb-d7644b1020a9.png)
 
-	그 중에서도 [지난 1년 동안 가장 많이 참가한 문화예술관람활동] 항목에서 '영화 관람'은 46.2%로 압도적으로 높았으나 '전시회 관람'과 '박물관 관람', '연극 공연 관람' 등
-	항목은 모두 그의 1/10도 되지 않는 수치였다. 
+	그 중에서도 [지난 1년 동안 가장 많이 참가한 문화예술관람활동] 항목에서 '영화 관람'은 46.2%로 압도적으로 높았으나 
+	'전시회 관람'과 '박물관 관람', '연극 공연 관람' 등 항목은 모두 그의 1/10도 되지 않는 수치였다. 
 	
-![image](https://user-images.githubusercontent.com/93438663/192116532-adce5faf-124c-4fec-9585-0b8afa2d5b43.png)  
-  
+![image](https://user-images.githubusercontent.com/93438663/192116654-ec730690-3a1f-41e0-bcef-3ea18a64ba55.png)  
+
   	이처럼 많은 사람들이 문화예술 공연을 다양하게 즐기지 못하는 이유는 무엇일까? 우리는 다양한 공연에 대한 정보부족을 원인으로 꼽았고 이에 대한 해결방안으로 문화예술공연 정보 프로그램을 개발하였다.
 	
 ![image](https://user-images.githubusercontent.com/93438663/192116544-c451cfad-3f47-492c-814d-96ffe4ff2a7f.png)
