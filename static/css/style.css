@@ -1,0 +1,92 @@
+@font-face {
+    font-family: "Wilderness";
+    src: url("../../font/WildernessTypeface-Regular.ttf") format("truetype");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "JejuMyeongjo";
+    src: url("../../font/JejuMyeongjoOTF.otf") format("truetype");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Inter";
+    src: url("../../font/Inter-Regular.ttf") format("truetype");
+    font-weight: normal;
+}
+
+header {
+    background-color: #000825;
+    opacity:70%;
+    text-align: center;
+}
+
+select {
+    border:none;
+    background: #000825;
+    color:white;
+    padding-top: 10%;
+    text-align: center;
+    appearance:none;
+    font-family: JejuMyeongjo !important;
+}
+
+select::before{
+    content: "<i class='fa-solid fa-ellipsis-vertical'></i>";
+}
+
+.changeSort {
+    align-self: center;
+}
+
+.appname {
+    color: white;
+    font-family: Wilderness;
+    font-weight: lighter;
+    margin: 0;
+    font-size: 3em;
+}
+
+.search {
+    padding:3.5%;
+}
+
+.category {
+    font-family: JejuMyeongjo;
+    text-align: center;
+    padding: 3%
+}
+
+.item {
+    margin:10%;
+    font-family: Inter;
+}
+
+.poster {
+    max-width: 100%;
+    height: auto;
+}
+
+.title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break:break-all
+}
+
+.info{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.detailedInfo {
+    color:#000825;
+    opacity:70%;
+}
+
+input{
+    border-radius: 0;
+    outline: none;
+    border:none;
+}
