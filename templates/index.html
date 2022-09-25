@@ -40,9 +40,9 @@
 
                 {% for k, v in menu.items() %}
                 {% if v == condition %}
-                <div class="col-4"><a href={{v}}> {{ k }}</a></div>
+                <div class="col-4 selectCat"><a href={{v}}> {{ k }}</a></div>
                 {% else %}
-                <div class="col-4"><a href={{v}}> {{ k }}</a></div>
+                <div class="col-4 unselectCat"><a href={{v}}> {{ k }}</a></div>
                 {% endif %}
                 {% endfor %}
             </div>
