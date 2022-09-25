@@ -1,5 +1,6 @@
+# from urllib import request
 from flask import Flask
-from flask import render_template
+from flask import render_template, request
 from flask import redirect, url_for
 import pandas as pd
 
@@ -18,11 +19,9 @@ def contents():
             "연극" : "/contents/play",
             "국악" : "/contents/kor",
     }
-    other_cats = {"기간별" : "/period",
-            "지역별" : "/location"
-    }
+    
     # return render_template('main.html', menu=menus, other_cats=other_cats, condition=None)
-    return render_template('index.html', menu=menus, other_cats=other_cats, condition=None)
+    return render_template('index.html', menu=menus, other_cats=other_cats, condition=None, contents=data.to_dict('records'))
 
 @app.route('/contents/<condition>')
 def contents_value(condition):
@@ -33,9 +32,7 @@ def contents_value(condition):
             "연극" : "/contents/play",
             "국악" : "/contents/kor",
     }
-    other_cats = {"기간별" : "/period",
-            "지역별" : "/location"
-    }
+    
     for k, v in menus.items():
         if v.split('/')[-1] == condition:
             fil = k
@@ -54,11 +51,9 @@ def location():
             "서구" : "/location/seo",
             "달성군" : "/location/dals",
         }
-    other_cats = {"기간별" : "/period",
-            "주제별" : "/contents",
-        }
+    
     # return render_template('main.html', menu=menus, other_cats=other_cats, condition=None)
-    return render_template('index.html', menu=menus, other_cats=other_cats, condition=None)
+    return render_template('index.html', menu=menus, other_cats=other_cats, condition=None, contents=data.to_dict('records'))
 
 @app.route('/location/<condition>')
 def location_value(condition):
@@ -71,9 +66,7 @@ def location_value(condition):
             "서구" : "/location/seo",
             "달성군" : "/location/dals",
         }
-    other_cats = {"기간별" : "/period",
-            "주제별" : "/contents"
-    }
+    
     for k, v in menus.items():
         if v.split('/')[-1] == condition:
             fil = k
@@ -86,20 +79,16 @@ def period():
     menus = {"공연중" : "/period/on",
             "공연예정" : "/period/plan",
         }
-    other_cats = {"지역별" : "/location",
-            "주제별" : "/contents",
-        }
+    
     # return render_template('main.html', menu=menus, other_cats=other_cats, condition=None)
-    return render_template('index.html', menu=menus, other_cats=other_cats, condition=None)
+    return render_template('index.html', menu=menus, other_cats=other_cats, condition=None, contents=data.to_dict('records'))
 
 @app.route('/period/<condition>')
 def period_value(condition):
     menus = {"공연중" : "/period/on",
             "공연예정" : "/period/plan",
         }
-    other_cats = {"지역별" : "/location",
-            "주제별" : "/contents"
-    }
+    
     for k, v in menus.items():
         if v.split('/')[-1] == condition:
             fil = k
@@ -115,8 +104,25 @@ def view_item(id):
     # return render_template('item.html', contents=contents.to_dict('records')[0])
     return render_template('info.html', contents=contents.to_dict('records')[0])
 
+@app.route('/search', methods=['GET', 'POST'])
+def search_keyword():
+    condition = None
+    menus = {"공연중" : "/period/on",
+            "공연예정" : "/period/plan",
+        }
+    if request.method == 'POST':
+        keyword = request.form['keyword']
+        contents = data[data['prfnm'].str.contains(keyword)]
+        return render_template('index.html', menu=menus, other_cats=other_cats, condition=condition, contents=contents.to_dict('records'))
+    else:
+        return "Something got wrong, Try again"
 
 if __name__=="__main__":
     global data
+    global other_cats
     data = pd.read_csv('data.csv')
+    other_cats = {"지역별" : "/location",
+            "주제별" : "/contents",
+            "기간별" : '/period',
+    }
     app.run()
