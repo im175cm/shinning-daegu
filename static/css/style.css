@@ -1,16 +1,16 @@
 @font-face {
     font-family: "Wilderness";
-    src: url("../../font/WildernessTypeface-Regular.ttf") format("truetype");
+    src: url("/static/font/WildernessTypeface-Regular.ttf") format("truetype");
     font-weight: normal;
 }
 @font-face {
     font-family: "JejuMyeongjo";
-    src: url("../../font/JejuMyeongjoOTF.otf") format("truetype");
+    src: url("/static/font/JejuMyeongjoOTF.otf") format("truetype");
     font-weight: normal;
 }
 @font-face {
     font-family: "Inter";
-    src: url("../../font/Inter-Regular.ttf") format("truetype");
+    src: url("/static/font/Inter-Regular.ttf") format("truetype");
     font-weight: normal;
 }
 
