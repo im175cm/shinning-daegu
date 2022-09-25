@@ -13,9 +13,10 @@ def index():
 def contents():
     menus = {"뮤지컬" : "/contents/musical",
             "클래식" : "/contents/classic",
+            "오페라" : "/contents/opera",
             "무용" : "/contents/dance",
+            "연극" : "/contents/play",
             "국악" : "/contents/kor",
-            "연극" : "/contents/play"
     }
     other_cats = {"기간별" : "/period",
             "지역별" : "/location"
@@ -26,9 +27,10 @@ def contents():
 def contents_value(condition):
     menus = {"뮤지컬" : "/contents/musical",
             "클래식" : "/contents/classic",
+            "오페라" : "/contents/opera",
             "무용" : "/contents/dance",
+            "연극" : "/contents/play",
             "국악" : "/contents/kor",
-            "연극" : "/contents/play"
     }
     other_cats = {"기간별" : "/period",
             "지역별" : "/location"
