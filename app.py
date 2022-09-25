@@ -125,4 +125,4 @@ if __name__=="__main__":
             "주제별" : "/contents",
             "기간별" : '/period',
     }
-    app.run()
+    app.run(host="0.0.0.0", port=7750)
