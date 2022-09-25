@@ -17,7 +17,11 @@
                     <i class="fa-solid fa-ellipsis-vertical" style="color: white"></i>
                     <select onchange="if(this.value) location.href=(this.value);">
                         {% for k, v in other_cats.items() %}
-                            <option value="{{v}}">{{ k }}</option>
+                            {% if v in request.full_path %}
+                                <option value="{{v}}" selected>{{ k }}</option>
+                            {% else %}
+                                <option value="{{v}}">{{ k }}</option>
+                            {% endif %}
                         {% endfor %}
                     </select>
                 </div>
