@@ -107,6 +107,10 @@ table {
     margin-top: 10%;
 }
 
+th {
+    white-space:nowrap
+}
+
 td {
     text-align: center;
 }
