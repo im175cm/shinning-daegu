@@ -40,9 +40,9 @@
 
                 {% for k, v in menu.items() %}
                 {% if v == condition %}
-                <div class="col-4"><a href={{v}}> {{ k }}</a></div>
+                <div class="col-4 selectCat"><a href={{v}}> {{ k }}</a></div>
                 {% else %}
-                <div class="col-4"><a href={{v}}> {{ k }}</a></div>
+                <div class="col-4 unselectCat"><a href={{v}}> {{ k }}</a></div>
                 {% endif %}
                 {% endfor %}
             </div>
@@ -50,19 +50,18 @@
             <div OnClick="location.href='/item/{{ v.mt20id }}'" class="row item">
                 <div class="col-5">
                     <div class="poster">
-                        <!-- <img src="https://sori114.com/sori/data/board/artcent/file/21/artcent_29705_PF197744.jpg" class="poster"> -->
-                        <img src="{{contents['poster'] }}" class="poster">
+                        <img src="{{v['poster'] }}" class="poster">
                     </div>
                 </div>
                 <div class="col-7">
                     <div class="info">
-                        <div class="title"><b>{{ v['prfnm'] }}</b></div>
+                        <div class="title"><b>#{{ v['prfnm'] }}</b></div>
                         <div class="detailedInfo">
                             <div class="row">
-                                <div class="col-5 date">{{ v['prfstate']}}</div>
-                                <div class="col-7 genre">{{ v['genrenm'] }}</div>
+                                <div class="col-5 date">#{{ v['prfstate']}}</div>
+                                <div class="col-7 genre">#{{ v['genrenm'] }}</div>
                             </div>
-                            <div class="place">{{ v['fcltynm']}}</div>
+                            <div class="place">#{{ v['fcltynm']}}</div>
                         </div>
                     </div>
                 </div>
