@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>On Stage</title>
-    <link rel="stylesheet" href="static/css/style.css">
-    <link rel="stylesheet" href="static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
     <script src="https://kit.fontawesome.com/f9a809ddea.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -49,7 +49,8 @@
             <div OnClick="location.href='/item/{{ v.mt20id }}'" class="row item">
                 <div class="col-5">
                     <div class="poster">
-                        <img src="https://sori114.com/sori/data/board/artcent/file/21/artcent_29705_PF197744.jpg" class="poster">
+                        <!-- <img src="https://sori114.com/sori/data/board/artcent/file/21/artcent_29705_PF197744.jpg" class="poster"> -->
+                        <img src="{{contents['poster'] }}" class="poster">
                     </div>
                 </div>
                 <div class="col-7">
