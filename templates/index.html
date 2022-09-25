@@ -41,13 +41,31 @@
     <section>
         <div class="container">
             <div class="row category">
+                {% if menu|length == 6 %}
+                    {% for k, v in menu.items() %}
+                        {% if v.split('/')[-1] == condition %}
+                            <div class="col-4 selectCat"><a href={{v}}> {{ k }}</a></div>
+                        {% else %}
+                            <div class="col-4 unselectCat"><a href={{v}}> {{ k }}</a></div>
+                        {% endif %}
+                    {% endfor %}
+                {% elif menu|length == 2 %}
+                    {% for k, v in menu.items() %}
+                        {% if v.split('/')[-1] == condition %}
+                            <div class="col-6 selectCat"><a href={{v}}> {{ k }}</a></div>
+                        {% else %}
+                            <div class="col-6 unselectCat"><a href={{v}}> {{ k }}</a></div>
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
                 {% for k, v in menu.items() %}
-                    {% if v.split('/')[-1] == condition %}
-                        <div class="col-4 selectCat"><a href={{v}}> {{ k }}</a></div>
-                    {% else %}
-                        <div class="col-4 unselectCat"><a href={{v}}> {{ k }}</a></div>
-                    {% endif %}
-                {% endfor %}
+                {% if v.split('/')[-1] == condition %}
+                    <div class="col-3 selectCat"><a href={{v}}> {{ k }}</a></div>
+                {% else %}
+                    <div class="col-3 unselectCat"><a href={{v}}> {{ k }}</a></div>
+                {% endif %}
+            {% endfor %}
+                {% endif %}
             </div>
             {% for v in contents %}
             <div OnClick="location.href='/item/{{ v.mt20id }}'" class="row item">
