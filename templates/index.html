@@ -16,9 +16,9 @@
                 <div class="col-4 changeSort">
                     <i class="fa-solid fa-ellipsis-vertical" style="color: white"></i>
                     <select>
-                        <option selected>컨텐츠별</option>
-                        <option>지역별</option>
-                        <option>시기순</option>
+                        {% for k, v in other_cats.items() %}
+                            <option><a href={{v}}> {{ k }}</a></option>
+                        {% endfor %}
                     </select>
                 </div>
                 <div class="col-4">
@@ -37,14 +37,17 @@
     <section>
         <div class="container">
             <div class="row category">
-                <div class="col-4">뮤지컬</div>
-                <div class="col-4">클래식</div>
-                <div class="col-4">오페라</div>
-                <div class="col-4">무용</div>
-                <div class="col-4">연극</div>
-                <div class="col-4">기타</div>
+
+                {% for k, v in menu.items() %}
+                {% if v == condition %}
+                <div class="col-4"><a href={{v}}> {{ k }}</a></div>
+                {% else %}
+                <div class="col-4"><a href={{v}}> {{ k }}</a></div>
+                {% endif %}
+                {% endfor %}
             </div>
-            <div class="row item">
+            {% for v in contents %}
+            <div OnClick="location.href='/item/{{ v.mt20id }}'" class="row item">
                 <div class="col-5">
                     <div class="poster">
                         <img src="https://sori114.com/sori/data/board/artcent/file/21/artcent_29705_PF197744.jpg" class="poster">
@@ -52,74 +55,18 @@
                 </div>
                 <div class="col-7">
                     <div class="info">
-                        <div class="title"><b>#셜록홈즈 시즌1:바스커빌가의 개</b></div>
+                        <div class="title"><b>{{ v['prfnm'] }}</b></div>
                         <div class="detailedInfo">
                             <div class="row">
-                                <div class="col-5 date">#202210</div>
-                                <div class="col-7 genre">#추리</div>
+                                <div class="col-5 date">{{ v['prfstate']}}</div>
+                                <div class="col-7 genre">{{ v['genrenm'] }}</div>
                             </div>
-                            <div class="place">#한울림소극장</div>
+                            <div class="place">{{ v['fcltynm']}}</div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row item">
-                <div class="col-5">
-                    <div class="poster">
-                        <img src="https://sori114.com/sori/data/board/artcent/file/21/artcent_29705_PF197744.jpg" class="poster">
-                    </div>
-                </div>
-                <div class="col-7">
-                    <div class="info">
-                        <div class="title"><b>#셜록홈즈 시즌1:바스커빌가의 개</b></div>
-                        <div class="detailedInfo">
-                            <div class="row">
-                                <div class="col-5 date">#202210</div>
-                                <div class="col-7 genre">#추리</div>
-                            </div>
-                            <div class="place">#한울림소극장</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row item">
-                <div class="col-5">
-                    <div class="poster">
-                        <img src="https://sori114.com/sori/data/board/artcent/file/21/artcent_29705_PF197744.jpg" class="poster">
-                    </div>
-                </div>
-                <div class="col-7">
-                    <div class="info">
-                        <div class="title"><b>#YOU & IT - 대구</b></div>
-                        <div class="detailedInfo">
-                            <div class="row">
-                                <div class="col-5 date">#202210</div>
-                                <div class="col-7 genre">#창작뮤지컬</div>
-                            </div>
-                            <div class="place">#꿈꾸는시어터</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row item">
-                <div class="col-5">
-                    <div class="poster">
-                        <img src="https://sori114.com/sori/data/board/artcent/file/21/artcent_29705_PF197744.jpg" class="poster">
-                    </div>
-                </div>
-                <div class="col-7">
-                    <div class="info">
-                        <div class="title"><b>#셜록홈즈 시즌1:바스커빌가의 개</b></div>
-                        <div class="detailedInfo">
-                            <div class="row">
-                                <div class="col-5 date">#202210</div>
-                                <div class="col-7 genre">#추리</div>
-                            </div>
-                            <div class="place">#한울림소극장</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div>  
+            {% endfor %}          
         </div>
     </section>
 </body>
