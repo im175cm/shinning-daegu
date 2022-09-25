@@ -37,6 +37,7 @@
     <section>
         <div class="container">
             <div class="row category">
+
                 {% for k, v in menu.items() %}
                 {% if v == condition %}
                 <div class="col-4"><a href={{v}}> {{ k }}</a></div>
@@ -63,14 +64,6 @@
                             </div>
                             <div class="place">{{ v['fcltynm']}}</div>
                         </div>
-                        <!-- <div class="title"><b>#셜록홈즈 시즌1:바스커빌가의 개</b></div>
-                        <div class="detailedInfo">
-                            <div class="row">
-                                <div class="col-5 date">#202210</div>
-                                <div class="col-7 genre">#추리</div>
-                            </div>
-                            <div class="place">#한울림소극장</div>
-                        </div> -->
                     </div>
                 </div>
             </div>  
