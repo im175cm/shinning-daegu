@@ -39,4 +39,4 @@
 		- DB에서 불러온 데이터로 웹 구성
     
 - 시연 영상
-	유튜브 링크
+	유튜브 링크: [OnStage 시연 영상](https://www.youtube.com/watch?v=Q8UX0-CXdO0)
