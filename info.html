@@ -36,7 +36,7 @@
             </div>
             <div class="row">
                 <div class="offset-2 col-8">
-                    <img src="https://sori114.com/sori/data/board/artcent/file/21/artcent_29705_PF197744.jpg" class="poster">
+                    <img src="{{contents['poster'] }}" class="poster">
                 </div>
             </div>
             <div class="row">
@@ -44,15 +44,15 @@
                     <table class="table" style="font-family: Inter !important;">
                         <tr>
                             <th scope="row"><li>공연명</li></th>
-                            <td>『셜록홈즈 시즌1:바스커빌가의 개』</td>
+                            <td>{{ contents['prfnm'] }}</td>
                         </tr>
                         <tr>
                             <th scope="row"><li>공연기간</li></th>
-                            <td>2022년 10월 13일 (목) <br>- 2022년 10월 16일 (일)</td>
+                            <td>{{contents['prfpdfrom']}} <br>- {{contents['prfpdto']}}</td>
                         </tr>
                         <tr>
                             <th scope="row"><li>공연장소</li></th>
-                            <td>한울림소극장</td>
+                            <td>{{contents['fcltynm']}}</td>
                         </tr>
                     </table>
                 </div>
