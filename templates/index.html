@@ -15,9 +15,9 @@
             <div class="row">
                 <div class="col-4 changeSort">
                     <i class="fa-solid fa-ellipsis-vertical" style="color: white"></i>
-                    <select>
+                    <select onchange="if(this.value) location.href=(this.value);">
                         {% for k, v in other_cats.items() %}
-                            <option><a href={{v}}> {{ k }}</a></option>
+                            <option value="{{v}}">{{ k }}</option>
                         {% endfor %}
                     </select>
                 </div>
