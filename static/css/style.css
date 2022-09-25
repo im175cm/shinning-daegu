@@ -110,3 +110,17 @@ table {
 td {
     text-align: center;
 }
+
+a {
+    text-decoration-line: none !important;
+}
+
+.selectCat {
+    color:#000825;
+    opacity: 30%;
+}
+
+.unselectCat {
+    color: #000825;
+    opacity: 30%;
+}
