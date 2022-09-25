@@ -123,4 +123,8 @@ a {
 .unselectCat {
     color: #000825;
     opacity: 30%;
+}  
+
+form {
+    width: 100%;
 }
