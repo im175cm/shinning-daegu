@@ -37,13 +37,12 @@
     <section>
         <div class="container">
             <div class="row category">
-
                 {% for k, v in menu.items() %}
-                {% if v == condition %}
-                <div class="col-4 selectCat"><a href={{v}}> {{ k }}</a></div>
-                {% else %}
-                <div class="col-4 unselectCat"><a href={{v}}> {{ k }}</a></div>
-                {% endif %}
+                    {% if v.split('/')[-1] == condition %}
+                        <div class="col-4 selectCat"><a href={{v}}> {{ k }}</a></div>
+                    {% else %}
+                        <div class="col-4 unselectCat"><a href={{v}}> {{ k }}</a></div>
+                    {% endif %}
                 {% endfor %}
             </div>
             {% for v in contents %}
