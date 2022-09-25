@@ -21,7 +21,8 @@ def contents():
     other_cats = {"기간별" : "/period",
             "지역별" : "/location"
     }
-    return render_template('main.html', menu=menus, other_cats=other_cats, condition=None)
+    # return render_template('main.html', menu=menus, other_cats=other_cats, condition=None)
+    return render_template('index.html', menu=menus, other_cats=other_cats, condition=None)
 
 @app.route('/contents/<condition>')
 def contents_value(condition):
@@ -39,7 +40,8 @@ def contents_value(condition):
         if v.split('/')[-1] == condition:
             fil = k
     contents = data[data['genrenm'] == fil]
-    return render_template('main.html', menu=menus, other_cats=other_cats, condition=condition, contents=contents.to_dict('records'))
+    # return render_template('main.html', menu=menus, other_cats=other_cats, condition=condition, contents=contents.to_dict('records'))
+    return render_template('index.html', menu=menus, other_cats=other_cats, condition=condition, contents=contents.to_dict('records'))
 
 @app.route('/location')
 def location():
@@ -55,7 +57,8 @@ def location():
     other_cats = {"기간별" : "/period",
             "주제별" : "/contents",
         }
-    return render_template('main.html', menu=menus, other_cats=other_cats, condition=None)
+    # return render_template('main.html', menu=menus, other_cats=other_cats, condition=None)
+    return render_template('index.html', menu=menus, other_cats=other_cats, condition=None)
 
 @app.route('/location/<condition>')
 def location_value(condition):
@@ -75,7 +78,8 @@ def location_value(condition):
         if v.split('/')[-1] == condition:
             fil = k
     contents = data[data['SGG'] == fil]
-    return render_template('main.html', menu=menus, other_cats=other_cats, condition=condition, contents=contents.to_dict('records'))
+    # return render_template('main.html', menu=menus, other_cats=other_cats, condition=condition, contents=contents.to_dict('records'))
+    return render_template('index.html', menu=menus, other_cats=other_cats, condition=condition, contents=contents.to_dict('records'))
 
 @app.route('/period')
 def period():
@@ -85,7 +89,8 @@ def period():
     other_cats = {"지역별" : "/location",
             "주제별" : "/contents",
         }
-    return render_template('main.html', menu=menus, other_cats=other_cats, condition=None)
+    # return render_template('main.html', menu=menus, other_cats=other_cats, condition=None)
+    return render_template('index.html', menu=menus, other_cats=other_cats, condition=None)
 
 @app.route('/period/<condition>')
 def period_value(condition):
@@ -99,14 +104,16 @@ def period_value(condition):
         if v.split('/')[-1] == condition:
             fil = k
     contents = data[data['prfstate'] == fil]
-    return render_template('main.html', menu=menus, other_cats=other_cats, condition=condition, contents=contents.to_dict('records'))
+    # return render_template('main.html', menu=menus, other_cats=other_cats, condition=condition, contents=contents.to_dict('records'))
+    return render_template('index.html', menu=menus, other_cats=other_cats, condition=condition, contents=contents.to_dict('records'))
 
 
 @app.route('/item/<id>')
 def view_item(id):
     contents = data[data['mt20id'] == id]
 
-    return render_template('item.html', contents=contents.to_dict('records')[0])
+    # return render_template('item.html', contents=contents.to_dict('records')[0])
+    return render_template('info.html', contents=contents.to_dict('records')[0])
 
 
 if __name__=="__main__":
